@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   <!-- <script src="login.js" defer></script>  Optional -->
+</head>
+<body>
+    <div class="login-container">
+        <h2 id="topic">PULSE-TITAN</h2>
+        <form id="loginForm" method="POST" action="login.php">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="userName" name="userName" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="login-button" type="submit">Login</button>
+            <button class="sign-up-button" type="button" onclick="window.location.href='signup.html'">Sign Up</button>
+            <a href="./backend/adminLogin.php" class="forgot-password">Are you an Admin? </a>
+        </form>
+    </div>
+</body>
+</html>
+

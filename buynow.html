@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Multiple Products with Total</title>
+   <style>
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    margin: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./login/sign_upback.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: rgb(16, 15, 15);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Headings */
+.container h2, .container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Form Labels */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Product Section */
+.product-section {
+    margin-bottom: 20px;
+}
+
+/* Product Rows */
+.product-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.add-btn,
+.remove-btn,
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove Button */
+.remove-btn {
+    background-color: #dc3545;
+    font-size: 12px;
+}
+
+/* Hover Effects */
+.add-btn:hover,
+.remove-btn:hover,
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .product-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+   </style>
+  
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Place Your Order</h2>
+        <form action="./buynow.php" method="post">
+            <!-- User Information -->
+            <div class="user-details">
+                <label for="firstname">Full Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Products Section -->
+            <h3>Products</h3>
+            <div id="product-container" class="product-section">
+                <div class="product-row">
+                    <label>Product</label>
+                    <select name="product_code[]" onchange="updateTotal()" required>
+                        <option value="DB001">Dumbell Bar (DB001)</option>
+                        <option value="DB002">Soft Dumbell (DB002)</option>
+                        <option value="DB003">Steel Dumbell-8kg (DB003)</option>
+                        <option value="EB001">Exercise Bikes-WESLO (EB001)</option>
+                        <option value="TM001">Treadmill-WESLO(90KG) (TM001)</option>
+                        <option value="DS001">Dumbell Set (DS001)</option>
+                        <option value="MT001">Men's Trackbottom (MT001)</option>
+                        <option value="WT001">Women's Sport T-shirt (WT001)</option>
+                        <option value="YM001">Yoga-Mats (YM001)</option>
+                        <option value="HH001">Hoola-hoops (HH001)</option>
+                        <option value="CT001">Cross-Trainer (CT001)</option>
+                        <option value="SG001">All-In-One Strength Gym (SG001)</option>
+                        <option value="FK001">Fitness-Pulldown-Kit (FK001)</option>
+                        <option value="NS001">Nature-Craft Enhancing-Supplement (NS001)</option>
+                        <option value="NM001">Naturello Multi-Vitamin (NM001)</option>
+                        <option value="NK001">Naturemade K-13 Vitamin (NK001)</option>
+                        <option value="NK002">Naturemade K-2 Vitamin (NK002)</option>
+                        <option value="MP001">Muscle Protein-Powder (MP001)</option>
+                        <option value="CS001">Creatine Bodybuilding-Supplement (CS001)</option>
+                        <option value="SC001">Stair-Climber (SC001)</option>
+                        <option value="SB001">Stationary Bike (SB001)</option>
+                    </select>
+
+                    <label>Quantity</label>
+                    <input type="number" name="quantity[]" min="1" onchange="updateTotal()" required placeholder="Enter Quantity">
+                </div>
+            </div>
+            <button type="button" class="add-btn" onclick="addProductRow()">Add More Products</button>
+
+            <!-- Display Total -->
+            <h3 id="total-cost" style="margin-top: 20px;">Total: LKR 0</h3>
+
+            <!-- Submit -->
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+
+   
+    <script src="./buynow.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    margin: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./login/sign_upback.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: rgb(16, 15, 15);
+}
+
+#topic{
+    font-size: 50px;
+    color:whitesmoke;
+    margin-bottom: 20px;
+    
+}
+
+.container {
+    width: 550px;
+    padding: 20px; 
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: auto;
+    color: #f5f5f5;
+    font-size: 20px;
+}
+
+
+input[type=text], input[type=email], input[type=password], input[type=tel], input[type=date], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #355F2E;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color:#F9E6CF ;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #6a11cb;
+    color: white;
+    padding: 14px 20px;
+    margin: 16px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+    background-color: #2575fc;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Make the container width adjust for tablets */
+        font-size: 18px;
+    }
+
+    #topic {
+        font-size: 40px; /* Adjust the font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%; /* Make the container fit smaller screens */
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    #topic {
+        font-size: 30px; /* Adjust the font size for mobile devices */
+    }
+
+    input[type=text], input[type=email], input[type=password], input[type=tel], input[type=date], select {
+        font-size: 14px; /* Adjust input font size for mobile */
+    }
+
+    input[type=submit] {
+        font-size: 14px; /* Adjust button font size for mobile */
+    }
+}

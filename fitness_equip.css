@@ -1,0 +1,291 @@
+body {
+  font-family: "Bitter", serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./Apparel/fitness_equip back1.jpg'); /* Background image with gradient overlay */
+  background-size: cover;
+  background-position: center;
+  color: rgb(16, 15, 15);
+}
+
+
+.row-left a {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Arial", serif;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.row-left a:hover {
+  background-color: #218838; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gallery-category {
+  width: 80%;
+  margin: 5px;
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  align-items: center;
+}
+
+.gallery-category:hover {
+  transform: scale(1.05);
+}
+
+.gallery-category img {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery-category h2 {
+  padding: 10px 0;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .gallery-category {
+      width: 45%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gallery-category {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+  }
+}
+
+.category {
+  text-decoration: none;
+  color: #09122C;
+}
+
+.shop {
+  width: 5px;
+  height: 5px;
+}
+
+.rating {
+  color: #ff9800; 
+  font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+   
+}
+#rate{
+  text-decoration: none;
+  color:#09122C;
+}
+
+.cart {
+  width: 30px;
+  height: 30px;
+  margin-top: 0;
+  text-decoration: none;
+  font-family: "Bitter", serif;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center-text h2 {
+  font-size: var(--h2-font);
+  font-weight: 700;
+}
+#topic-head{
+  text-align: center;
+}
+
+.heading {
+  background-color:#ff9800;
+  margin: 20px 60px;
+  color:#F5F5F5;
+  
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 60px;
+  padding: 10px;
+  background-color: #18a02f;
+  border-radius: 8px;
+  gap:5px;
+}
+
+.filters select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+#topic-head{
+  font-size: 150px;
+    color:#F5F5F5
+}
+
+.main-content {
+  padding: 20px;
+ /* background-color: ;*/
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
+  justify-content: center;
+ 
+  /* */
+  
+}
+
+.product {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  font-family:"Lato",serif ;
+
+  
+  
+}
+
+.row-left, .row-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.row-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.product img {
+  max-width: auto;
+  height: auto;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Arial", serif;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #F14A00;
+  transform: translateY(-2px);
+}
+
+.row-left a, .button {
+  display: inline-block;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+
+/* For mobile devices and others */
+@media (max-width: 680px) {
+  .product-grid {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 20px;
+      padding: 20px;
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .product-grid {
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: 2fr;
+      grid-template-rows: auto;
+      gap: 20px;
+      padding: 20px;
+  }
+}
+
+/* For foldable laptops */
+@media (min-width: 853px) and (max-width: 1280px) {
+  .product-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Laptops (min-width: 1025px and max-width: 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .product-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Desktops (min-width: 1281px) */
+@media (min-width: 1281px) {
+  .product-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
